@@ -11,7 +11,8 @@ Steps:
 
 Creating venv python environment: 
 
-"""
-python3 -m venv .venv 
-"""
+```
+python3 -m venv .venv
+```
+
 Create a virtual environment to download packages and dependencies needed 
