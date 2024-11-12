@@ -14,6 +14,7 @@ dest_dir_pdf = "/Users/eunahjung/Desktop/pdf" #pdf
 dest_dir_pptx = "/Users/eunahjung/Desktop/pptx" #pptx, key
 dest_dir_image = "/Users/eunahjung/Desktop/img" #jpg, png, jpeg
 dest_dir_documents = "/Users/eunahjung/Desktop/docs" #docx, pages, xslx, numbers
+dest_dir_video = "/Users/eunahjung/Desktop/video" #mp4, mov, avi, wmv
 
 # ? supported image types
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw",
@@ -33,14 +34,12 @@ pptx_extensions = [".ppt", ".pptx"]
 #     for entry in entries: 
 #         print(entry.name)
 
-def rename(entry, name):
+#entry = file name itself without paths
+def move_file(dest, entry):
     """
-    why do we need to remane the file? 
+    why do we need to rename the file? bc
     ie. filename: /path/to/current/file.txt -> "path/to/destination/file.txt" 
     """
-
-def move_file(dest, entry, name):
-    dest = join(dest, name)
     move(entry, dest)
 
 class MovingFiles(FileSystemEventHandler):
@@ -56,19 +55,34 @@ class MovingFiles(FileSystemEventHandler):
     
     #step2: move files to designated folders
     def check_pdf_files(self, entry, name): 
-        pass
+        for pdf_extension in pdf_extensions:
+            if name.endswith(pdf_extension) or name.endswith(pdf_extension.upper()):
+                move_file(dest_dir_pdf, entry, name)
+                logging.info(f"Moved {name} to {dest_dir_pdf}")
     
     def check_pptx_files(self, entry, name):
-        pass
+        for pptx_extension in pptx_extensions:
+            if name.endswith(pptx_extension) or name.endswith(pptx_extension.upper()):
+                move_file(dest_dir_pptx, entry, name)
+                logging.info(f"Moved {name} to {dest_dir_pptx}")
 
     def check_image_files(self, entry, name):
-        pass
+        for image_extension in image_extensions: 
+            if name.endswith(image_extension) or name.endswith(image_extension.upper()): 
+                move_file(dest_dir_image, entry, name)
+                logging.info(f"Moved {name} to {dest_dir_image}")
 
     def check_documents_files(self, entry, name):
-        pass
+        for document_extension in document_extensions: 
+            if name.endswith(document_extension) or name.endswith(document_extension.upper()): 
+                move_file(dest_dir_documents, entry, name)
+                logging.info(f"Moved {name} to {dest_dir_documents}")
 
     def check_video_files(self, entry, name):
-        pass
+        for video_extension in video_extensions: 
+            if name.endswith(video_extension) or name.endswith(video_extension.upper()): 
+                move_file(dest_dir_video, entry, name)
+                logging.info(f"Moved {name} to {dest_dir_video}")
             
 
 
