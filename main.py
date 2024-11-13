@@ -23,7 +23,7 @@ image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".
 video_extensions = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg",
                     ".mp4", ".mp4v", ".m4v", ".avi", ".wmv", ".mov", ".qt", ".flv", ".swf", ".avchd"]
 # ? supported Document types
-document_extensions = [".doc", ".docx", ".odt", ".xls", ".xlsx", ".ppt", ".pptx"]
+document_extensions = [".doc", ".docx", ".odt", ".xls", ".xlsx"]
 # ? supported pdf types
 pdf_extensions = [".pdf"]
 # ? supported pptx types
