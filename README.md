@@ -1,6 +1,6 @@
 # file-management
 
-Python Automation Project
+Automation Project using Python
 
 Summary: 
 Whatever file that gets downloaded, it will be sorted directly into the designated folder instead of the default Downloads folder. 
